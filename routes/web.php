@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
+Route::get("jukebox/jukebox", "JukeboxController@create");
+Route::post("jukebox/jukebox", "JukeboxController@store");  
+Route::get("jukebox/edit", "JukeboxController@edit");
+Route::post("jukebox/html_wrapper", "JukeboxController@edit");
