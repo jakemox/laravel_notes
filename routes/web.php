@@ -20,4 +20,8 @@ Route::get('/', function () {
 Route::get("jukebox/jukebox", "JukeboxController@create");
 Route::post("jukebox/jukebox", "JukeboxController@store");  
 Route::get("jukebox/edit", "JukeboxController@edit");
+Route::post("jukebox/edit", "JukeboxController@store");
 Route::post("jukebox/html_wrapper", "JukeboxController@edit");
+Route::get("jukebox/display", "JukeboxController@display");
+Route::get("jukebox/delete", "JukeboxController@delete");
+Route::get("jukebox/user", "JukeboxController@user");

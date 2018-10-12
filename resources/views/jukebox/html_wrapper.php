@@ -12,5 +12,8 @@
 
     <?php echo $content ?>
      
+  <br><br><br>
+    <a href="http://www.hackathon-jukebox.test/jukebox/display">Display page</a>
+    <a href="http://www.hackathon-jukebox.test/jukebox/user">User</a>
   </body>
 </html>

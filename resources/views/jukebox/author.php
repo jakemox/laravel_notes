@@ -13,8 +13,16 @@
     <form action="" method="post">
     <?= csrf_field() ?>
     <?php foreach($songs as $song) : ?>
-      <label for="name_of_song">Name of song</label>
+      <label for="name_of_song">Name</label>
       <input type="text" name="name_of_song" id="name_of_song" value="<?= htmlspecialchars($song->name_of_song)?>">
+      <br><br>
+
+      <label for="code_of_video">Code of video</label>
+      <input type="text" name="code_of_video" id="code_of_video" value="<?= htmlspecialchars( $song->code_of_video)?>">
+      <br><br>
+
+      <label for="code_of_video">Code of video</label>
+      <input type="text" name="code_of_video" id="code_of_video" value="<?= htmlspecialchars( $song->code_of_video)?>">
       <br><br>
 
       <label for="code_of_video">Code of video</label>
