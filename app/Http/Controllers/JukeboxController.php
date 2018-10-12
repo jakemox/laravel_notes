@@ -28,17 +28,25 @@ class JukeboxController extends Controller
                 WHERE `id` = ?
             ";
             $song = DB::select($query, [$id]);
-            return redirect('jukebox/edit?id='.$song['id']);
+            
         
         } else  {
 
-            $song= DB::input();
+            $song  = new \stdClass();
+            $song->id = null;
+            $song->name_of_song = null;
+            $song->code_of_video = null;
 
-            
-            $id = DB::table('jukebox')->insertGetId([
-                $name_of_song => $request->input('name_of_song'),
-                $code_of_video => $request->input('code_of_video')
-            ]);
+            $query = "
+            INSERT
+            INTO `jukebox`
+            (`name_of_song`, `code_of_video`)
+            VALUES 
+            ('{$request->input('name_of_song')}', '{$request->input('code_of_video')}')
+             ";
+
+            DB::insert($query);
+
     
             $form = view('jukebox/form', ['songs' => [$song]]);
             return $form;
